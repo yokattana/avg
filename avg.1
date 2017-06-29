@@ -1,0 +1,37 @@
+.Dd $MDocdate$
+.Dt AVG
+.Os Yokattana
+.Sh NAME
+.Nm avg
+.Nd calculate mean and standard deviation
+.Sh SYNOPSIS
+.Nm
+.Ar num
+.Ar num
+.Op Ar num ...
+.Sh DESCRIPTION
+The
+.Nm
+utility calculates the mean and standard deviation
+of the numbers supplied in its argument list.
+.Pp
+The mean is defined as the sum of the given values divided by their count:
+.Pp
+.Dl (val[0] + val[1] + ...) / count(vals)
+.Pp
+The standard deviation is defined as the square root of the sum
+of the squared difference between each of the values and the mean:
+.Pp
+.Dl sqrt((val[0]-mean)^2 + (val[1]-mean)^2 + ... )
+.Sh EXAMPLES
+Basic usage:
+.Pp
+.Dl avg 1 2 3 4 5
+.Pp
+To use values from a file or other program, try using
+.Em xargs(1)
+like so:
+.Pp
+.Dl cat numbers.txt | xargs avg
+.Sh AUTHORS
+.An Mt iku@yokattana.com
